@@ -4,36 +4,36 @@
 [ext_resource type="Texture2D" uid="uid://bdrastnl6otn0" path="res://assets/sprites/slime_green.png" id="1_hqxex"]
 [ext_resource type="PackedScene" uid="uid://b5tiaomv3brh0" path="res://scenes/kill_zone.tscn" id="2_3bkc1"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tmujq"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_vs2cy"]
 atlas = ExtResource("1_hqxex")
-region = Rect2(0, 24, 24, 24)
+region = Rect2(0, 25, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_73b04"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_oh1ll"]
 atlas = ExtResource("1_hqxex")
-region = Rect2(24, 24, 24, 24)
+region = Rect2(24, 25, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_41cea"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_hurpv"]
 atlas = ExtResource("1_hqxex")
-region = Rect2(48, 24, 24, 24)
+region = Rect2(48, 25, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wuqv4"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_idb0t"]
 atlas = ExtResource("1_hqxex")
-region = Rect2(72, 24, 24, 24)
+region = Rect2(72, 25, 24, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_31yrm"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_tmujq")
+"texture": SubResource("AtlasTexture_vs2cy")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_73b04")
+"texture": SubResource("AtlasTexture_oh1ll")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_41cea")
+"texture": SubResource("AtlasTexture_hurpv")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wuqv4")
+"texture": SubResource("AtlasTexture_idb0t")
 }],
 "loop": true,
 "name": &"default",
@@ -47,10 +47,10 @@ size = Vector2(12, 14)
 script = ExtResource("1_705u1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -12)
+position = Vector2(0, -11)
 sprite_frames = SubResource("SpriteFrames_31yrm")
 autoplay = "default"
-frame_progress = 0.150922
+frame_progress = 0.519508
 
 [node name="KillZone" parent="." instance=ExtResource("2_3bkc1")]
 position = Vector2(0, -12)
@@ -58,3 +58,13 @@ position = Vector2(0, -12)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
 position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_m43cu")
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(0, -7)
+target_position = Vector2(9, 0)
+collide_with_areas = true
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(0, -7)
+target_position = Vector2(-8, 0)
+collide_with_areas = true
