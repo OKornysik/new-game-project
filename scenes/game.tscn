@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://dg1q7dlv580n6"]
+[gd_scene load_steps=15 format=4 uid="uid://dg1q7dlv580n6"]
 
 [ext_resource type="PackedScene" uid="uid://bioeyfdsk1sty" path="res://scenes/player.tscn" id="1_aefw7"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="2_knglo"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bu2kn8ss5rqkw" path="res://scenes/coin.tscn" id="5_do53y"]
 [ext_resource type="PackedScene" uid="uid://b5tiaomv3brh0" path="res://scenes/kill_zone.tscn" id="6_fb60i"]
 [ext_resource type="PackedScene" uid="uid://bbltr1npi4j5a" path="res://scenes/slime.tscn" id="7_fbs0y"]
+[ext_resource type="FontFile" uid="uid://b1q2meyfib6hq" path="res://assets/fonts/PixelOperator8.ttf" id="8_7ntyx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4tfem"]
 texture = ExtResource("3_j7sqy")
@@ -271,3 +272,38 @@ position = Vector2(660, -56)
 
 [node name="Slime" parent="." instance=ExtResource("7_fbs0y")]
 position = Vector2(619, -1)
+
+[node name="Labels" type="Node" parent="."]
+
+[node name="Label" type="Label" parent="Labels"]
+offset_left = -64.0
+offset_top = -47.0
+offset_right = 27.0
+offset_bottom = -24.0
+theme_override_colors/font_color = Color(0.0980392, 0.313726, 0.752941, 1)
+theme_override_fonts/font = ExtResource("8_7ntyx")
+theme_override_font_sizes/font_size = 8
+text = "WASD to move.
+Space to jump."
+
+[node name="Label2" type="Label" parent="Labels"]
+offset_left = 486.0
+offset_top = -40.0
+offset_right = 601.0
+offset_bottom = -17.0
+theme_override_colors/font_color = Color(0.0980392, 0.313726, 0.752941, 1)
+theme_override_fonts/font = ExtResource("8_7ntyx")
+theme_override_font_sizes/font_size = 8
+text = "Don't fall to abyss"
+
+[node name="Label3" type="Label" parent="Labels"]
+offset_left = 668.0
+offset_top = -32.0
+offset_right = 792.0
+offset_bottom = -9.0
+theme_override_colors/font_color = Color(0.0980392, 0.313726, 0.752941, 1)
+theme_override_fonts/font = ExtResource("8_7ntyx")
+theme_override_font_sizes/font_size = 8
+text = "Not looking good,
+stay away or KILL it"
+horizontal_alignment = 1
